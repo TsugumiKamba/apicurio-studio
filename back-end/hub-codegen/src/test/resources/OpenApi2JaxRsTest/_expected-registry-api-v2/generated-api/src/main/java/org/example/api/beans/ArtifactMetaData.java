@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
@@ -39,21 +40,22 @@ import io.apicurio.registry.types.ArtifactType;
 public class ArtifactMetaData {
 
     @JsonProperty("name")
-    private java.lang.String name;
+    private String name;
     @JsonProperty("description")
-    private java.lang.String description;
+    private String description;
     /**
      * 
      * (Required)
      * 
      */
     @JsonProperty("createdBy")
-    private java.lang.String createdBy;
+    private String createdBy;
     /**
      * 
      * (Required)
      * 
      */
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ssZ", timezone = "UTC")
     @JsonProperty("createdOn")
     private Date createdOn;
     /**
@@ -62,12 +64,13 @@ public class ArtifactMetaData {
      * 
      */
     @JsonProperty("modifiedBy")
-    private java.lang.String modifiedBy;
+    private String modifiedBy;
     /**
      * 
      * (Required)
      * 
      */
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ssZ", timezone = "UTC")
     @JsonProperty("modifiedOn")
     private Date modifiedOn;
     /**
@@ -77,7 +80,7 @@ public class ArtifactMetaData {
      */
     @JsonProperty("id")
     @JsonPropertyDescription("The ID of a single Artifact.")
-    private java.lang.String id;
+    private String id;
     /**
      * 
      * (Required)
@@ -121,7 +124,7 @@ public class ArtifactMetaData {
      */
     @JsonProperty("labels")
     @JsonPropertyDescription("")
-    private List<java.lang.String> labels = new ArrayList<java.lang.String>();
+    private List<String> labels = new ArrayList<String>();
     /**
      * User-defined name-value pairs. Name and value must be strings.
      * 
@@ -135,25 +138,25 @@ public class ArtifactMetaData {
      */
     @JsonProperty("groupId")
     @JsonPropertyDescription("An id of a single Artifact Group.")
-    private java.lang.String groupId;
+    private String groupId;
 
     @JsonProperty("name")
-    public java.lang.String getName() {
+    public String getName() {
         return name;
     }
 
     @JsonProperty("name")
-    public void setName(java.lang.String name) {
+    public void setName(String name) {
         this.name = name;
     }
 
     @JsonProperty("description")
-    public java.lang.String getDescription() {
+    public String getDescription() {
         return description;
     }
 
     @JsonProperty("description")
-    public void setDescription(java.lang.String description) {
+    public void setDescription(String description) {
         this.description = description;
     }
 
@@ -163,7 +166,7 @@ public class ArtifactMetaData {
      * 
      */
     @JsonProperty("createdBy")
-    public java.lang.String getCreatedBy() {
+    public String getCreatedBy() {
         return createdBy;
     }
 
@@ -173,7 +176,7 @@ public class ArtifactMetaData {
      * 
      */
     @JsonProperty("createdBy")
-    public void setCreatedBy(java.lang.String createdBy) {
+    public void setCreatedBy(String createdBy) {
         this.createdBy = createdBy;
     }
 
@@ -203,7 +206,7 @@ public class ArtifactMetaData {
      * 
      */
     @JsonProperty("modifiedBy")
-    public java.lang.String getModifiedBy() {
+    public String getModifiedBy() {
         return modifiedBy;
     }
 
@@ -213,7 +216,7 @@ public class ArtifactMetaData {
      * 
      */
     @JsonProperty("modifiedBy")
-    public void setModifiedBy(java.lang.String modifiedBy) {
+    public void setModifiedBy(String modifiedBy) {
         this.modifiedBy = modifiedBy;
     }
 
@@ -243,7 +246,7 @@ public class ArtifactMetaData {
      * 
      */
     @JsonProperty("id")
-    public java.lang.String getId() {
+    public String getId() {
         return id;
     }
 
@@ -253,7 +256,7 @@ public class ArtifactMetaData {
      * 
      */
     @JsonProperty("id")
-    public void setId(java.lang.String id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -353,7 +356,7 @@ public class ArtifactMetaData {
      * 
      */
     @JsonProperty("labels")
-    public List<java.lang.String> getLabels() {
+    public List<String> getLabels() {
         return labels;
     }
 
@@ -361,7 +364,7 @@ public class ArtifactMetaData {
      * 
      */
     @JsonProperty("labels")
-    public void setLabels(List<java.lang.String> labels) {
+    public void setLabels(List<String> labels) {
         this.labels = labels;
     }
 
@@ -388,7 +391,7 @@ public class ArtifactMetaData {
      * 
      */
     @JsonProperty("groupId")
-    public java.lang.String getGroupId() {
+    public String getGroupId() {
         return groupId;
     }
 
@@ -397,7 +400,7 @@ public class ArtifactMetaData {
      * 
      */
     @JsonProperty("groupId")
-    public void setGroupId(java.lang.String groupId) {
+    public void setGroupId(String groupId) {
         this.groupId = groupId;
     }
 

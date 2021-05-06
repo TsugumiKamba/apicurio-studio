@@ -30,11 +30,13 @@ public class DocumentPreProcessor {
     
     private static IVisitor [] processors = {
             new OpenApiLongSimpleTypeProcessor(),
+            new OpenApiDateTimeSimpleTypeProcessor(),
             new OpenApiMapDataTypeProcessor(),
             new OpenApiTypeInliner(),
             new OpenApiInlinedSchemaRemover(),
             new OpenApiParameterInliner(),
             new OpenApiInlinedParameterRemover(),
+            new OpenApiResponseInliner(),
             new OpenApiAllOfProcessor()
     };
     

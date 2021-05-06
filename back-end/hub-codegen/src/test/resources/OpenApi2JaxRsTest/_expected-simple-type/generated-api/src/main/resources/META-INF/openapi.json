@@ -12,10 +12,8 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "type": "array",
-                                    "items": {
-                                        "type": "string"
-                                    }
+                                    "type": "string",
+                                    "format": "binary"
                                 }
                             }
                         },
@@ -52,30 +50,42 @@
                 "x-codegen-type": "StringMap",
                 "x-codegen-inline": "true"
             },
+            "MyQuarkusBean": {
+            	"type": "object",
+            	"properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    }
+            	},
+            	"x-codegen-annotations": ["io.quarkus.runtime.annotations.RegisterForReflection"]
+            },
             "SampleDataType": {
                 "description": "",
                 "type": "object",
                 "properties": {
                     "name": {
-                        "description": "",
                         "type": "string"
                     },
                     "mylong": {
-                        "description": "",
                         "type": "integer",
                         "format": "int64"
                     },
                     "myint": {
-                        "description": "",
                         "type": "integer",
                         "format": "int32"
+                    },
+                    "mydate": {
+                    	"type": "string",
+                    	"format": "date-time"
                     },
                     "mymap": {
                         "$ref": "#/components/schemas/MyMap"
                     },
                     "id": {
-                        "$ref": "#/components/schemas/MyId",
-                        "description": ""
+                        "$ref": "#/components/schemas/MyId"
                     }
                 }
             }

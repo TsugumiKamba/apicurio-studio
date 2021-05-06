@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
@@ -37,18 +38,19 @@ public class SearchedVersion {
      */
     @JsonProperty("name")
     @JsonPropertyDescription("")
-    private java.lang.String name;
+    private String name;
     /**
      * 
      */
     @JsonProperty("description")
     @JsonPropertyDescription("")
-    private java.lang.String description;
+    private String description;
     /**
      * 
      * (Required)
      * 
      */
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ssZ", timezone = "UTC")
     @JsonProperty("createdOn")
     @JsonPropertyDescription("")
     private Date createdOn;
@@ -59,7 +61,7 @@ public class SearchedVersion {
      */
     @JsonProperty("createdBy")
     @JsonPropertyDescription("")
-    private java.lang.String createdBy;
+    private String createdBy;
     /**
      * 
      * (Required)
@@ -73,7 +75,7 @@ public class SearchedVersion {
      */
     @JsonProperty("labels")
     @JsonPropertyDescription("")
-    private List<java.lang.String> labels = new ArrayList<java.lang.String>();
+    private List<String> labels = new ArrayList<String>();
     /**
      * Describes the state of an artifact or artifact version.  The following states
      * are possible:
@@ -116,7 +118,7 @@ public class SearchedVersion {
      * 
      */
     @JsonProperty("name")
-    public java.lang.String getName() {
+    public String getName() {
         return name;
     }
 
@@ -124,7 +126,7 @@ public class SearchedVersion {
      * 
      */
     @JsonProperty("name")
-    public void setName(java.lang.String name) {
+    public void setName(String name) {
         this.name = name;
     }
 
@@ -132,7 +134,7 @@ public class SearchedVersion {
      * 
      */
     @JsonProperty("description")
-    public java.lang.String getDescription() {
+    public String getDescription() {
         return description;
     }
 
@@ -140,7 +142,7 @@ public class SearchedVersion {
      * 
      */
     @JsonProperty("description")
-    public void setDescription(java.lang.String description) {
+    public void setDescription(String description) {
         this.description = description;
     }
 
@@ -170,7 +172,7 @@ public class SearchedVersion {
      * 
      */
     @JsonProperty("createdBy")
-    public java.lang.String getCreatedBy() {
+    public String getCreatedBy() {
         return createdBy;
     }
 
@@ -180,7 +182,7 @@ public class SearchedVersion {
      * 
      */
     @JsonProperty("createdBy")
-    public void setCreatedBy(java.lang.String createdBy) {
+    public void setCreatedBy(String createdBy) {
         this.createdBy = createdBy;
     }
 
@@ -208,7 +210,7 @@ public class SearchedVersion {
      * 
      */
     @JsonProperty("labels")
-    public List<java.lang.String> getLabels() {
+    public List<String> getLabels() {
         return labels;
     }
 
@@ -216,7 +218,7 @@ public class SearchedVersion {
      * 
      */
     @JsonProperty("labels")
-    public void setLabels(List<java.lang.String> labels) {
+    public void setLabels(List<String> labels) {
         this.labels = labels;
     }
 
