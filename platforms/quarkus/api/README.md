@@ -11,6 +11,12 @@ You can run your application in dev mode that enables live coding using:
 mvn quarkus:dev
 ```
 
+## Running the application from an IDE
+
+Another option is to run the app directly from your IDE.  This can be done by opening
+the `StudioApiQuarkusMain` class in your idea and running (or debugging) it as a
+java application.
+
 ## Packaging and running the application
 
 By default, `mvn clean install` produces an executable JAR with the dev Quarkus configuration profile enabled, and in-memory persistence implementation.
@@ -48,7 +54,8 @@ For both profiles you need to provide connection configuration for a oidc server
 
  Option|Command argument|Env. variable|
  |---|---|---|
- |OIDC Server|`-Dquarkus.oidc.auth-server-url`|`APICURIO_KC_AUTH_URL`|
+ |OIDC Server|`-Dstudio.keycloak.url`|`APICURIO_KC_AUTH_URL`|
+ |OIDC Realm|`-Dstudio.keycloak.realm`|`APICURIO_KC_REALM`|
  |OIDC Client ID|`-Dquarkus.oidc.client-id`|`APICURIO_KC_CLIENT_ID`|
  
 To see additional options, visit:
