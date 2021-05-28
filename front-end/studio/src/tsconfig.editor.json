@@ -8,7 +8,12 @@
     "declaration": true,
     "inlineSources": true,
     "importHelpers": true,
-    "types": [ "node" ]
+    "types": [ "node" ],
+    "paths": {
+      "@angular/*": [
+        "./node_modules/@angular/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "annotateForClosureCompiler": true,
